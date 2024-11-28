@@ -3,9 +3,9 @@
 #include <stdint.h>
 
 /**
- * @brief Interfaz que especifica cómo obtener una medición de temperatura
+ * @brief Interface that specifies how to obtain a temperature measurement
  * 
- * @tparam T Tipo de valor de medición
+ * @tparam T Measurement value type
  */
 template <class T>
 class Temperature {

@@ -1,34 +1,31 @@
-# HomeEcoClimate (cliente)
+# HomeEcoClimate (Client)
 
-Sistema domótico de control del clima interior de un hogar bajo criterios de ahorro energético. Parte de cliente para microcontrolador ESP8266.
+Home automation system for indoor climate control based on energy-saving principles. Client component for ESP8266 microcontroller.
 
-## Entorno de desarrollo
+## Development Environment
 
-Este proyecto está pensado para ser usado junto con [PlatformIO](https://platformio.org/).
+This project is designed to be used with [PlatformIO](https://platformio.org/).
 
-## Configuración del microcontrolador ESP8266
+## ESP8266 Microcontroller Configuration
 
-El microcontrolador puede usarse para dos funciones distintas, según cómo se compile el proyecto. En cualquiera de los dos casos, se debe
-especificar correctamente el nombre y la contraseña de la red Wi-Fi a la que la placa debe conectarse para poder operar como se espera, a través
-de las variables `SSID` y `PSK` en `src/main.cpp`. Para habilitar una u otra modalidad es necesario comentar y descomentar las líneas indicadas
-en `src/main.cpp` que llaman a las funciones de _setup_ y _handle_ de cada funcionalidad e importar las cabeceras apropiadas. Más detalles en el
-comentario al principio del fichero `src/main.cpp`.
+The microcontroller can be configured for two distinct functionalities, depending on how the project is compiled. In either case, you must correctly specify the Wi-Fi network name and password that the board will connect to in order to operate as expected. These should be defined using the `SSID` and `PSK` variables in `src/main.cpp`. To enable one functionality or the other, comment and uncomment the lines in `src/main.cpp` that call the respective _setup_ and _handle_ functions for each mode, and import the appropriate headers. Further details can be found in the comments at the beginning of the `src/main.cpp` file.
 
-### Con actuadores
+### With Actuators
 
-El microcontrolador administrará un motor servo con la señal de control conectada al pin D2 para la regulación de la temperatura,
-otro motor servo con la señal de control conectada al pin D3 para la regulación del ángulo de apertura de las persianas verticales y un motor
-ventilador gestionado por un chip L293D, que está conectado al pin D5 para el control de velocidad, al pin D6 para activar el sentido de avance
-y al pin D7 para activar el sentido de retroceso. Este último no se usará puesto que solo se contempla el uso del ventilador en un único sentido.
-Las instrucciones las recibirá desde el broker MQTT, el cual debe ser indicado en la variable `mqttServer` en `src/actuators.cpp`.
+The microcontroller will manage:
+- A servo motor connected to pin D2 to control temperature regulation.
+- Another servo motor connected to pin D3 to adjust the angle of vertical blinds.
+- A fan motor controlled by an L293D chip, connected as follows:
+  - Pin D5 for speed control.
+  - Pin D6 to activate forward direction.
+  - Pin D7 to activate reverse direction (this will not be used, as the fan is only intended to operate in one direction).
 
-### Con sensores
+Commands will be received from an MQTT broker, which should be specified in the `mqttServer` variable in `src/actuators.cpp`.
 
-En este caso, el microcontrolador se comunicará con un sensor de temperatura y humedad combinado DHT11 con la señal de datos conectada al pin
-D1. Aproximadamente cada 10 segundos enviará una lectura de ambos parámetros al servidor que implementa la API REST del sistema mediante una
-petición _POST_.
+### With Sensors
 
-## Arquitectura
+In this configuration, the microcontroller will interface with a combined DHT11 temperature and humidity sensor, with the data signal connected to pin D1. Approximately every 10 seconds, it will send a reading of both parameters to the server implementing the system's REST API via a _POST_ request.
 
-El manejo de los dispositivos está mediado por librerías que abstraen su uso a modo de drivers y por interfaces propias que adaptan estos
-componentes para el uso específico de este proyecto. Para más detalles, consultar la documentación Doxygen integrada en el propio código fuente.
+## Architecture
+
+Device management is facilitated through libraries that abstract their use as drivers and through custom interfaces that adapt these components for the specific requirements of this project. For more details, refer to the integrated Doxygen documentation in the source code.

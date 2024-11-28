@@ -3,15 +3,15 @@
 #include <stdint.h>
 
 /**
- * @brief Interfaz que especifica cómo regular el control de temperatura
+ * @brief Interface that specifies how to regulate temperature control
  */
 class TempChange {
 
     public:
         /**
-         * @param tempChange Ajusta el nivel de calor o frío. Valores posibles: -128 a 127.
-         *                   Valores negativos activan el calentamiento y positivos el
-         *                   enfriamiento.
+         * @param tempChange Adjusts the level of heat or cold. Possible values: -128 to 127.
+         *                   Negative values activate heating, and positive values activate
+         *                   cooling.
          */
         virtual void setTempChange(int8_t tempChange);
 

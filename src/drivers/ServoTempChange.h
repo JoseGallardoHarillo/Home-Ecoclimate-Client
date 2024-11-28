@@ -10,15 +10,15 @@ class ServoTempChange : public TempChange {
 
     public:
         /**
-         * @param servoPin Número de pin al cual la señal del servo está conectado
+         * @param servoPin Pin number to which the servo signal is connected
          */
         ServoTempChange(uint8_t servoPin);
         /** 
-         * @param servoPin Número de pin al cual la señal del servo está conectado
-         * @param servoMin Ancho del pulso, en microsegundos, correspondiente al
-         *                 ángulo mínimo en el servo (0º)
-         * @param servoMax Ancho del pulso, en microsegundos, correspondiente al
-         *                 ángulo máximo en el servo (180º)
+         * @param servoPin Pin number to which the servo signal is connected
+         * @param servoMin Pulse width, in microseconds, corresponding to the
+         *                 minimum angle of the servo (0º)
+         * @param servoMax Pulse width, in microseconds, corresponding to the
+         *                 maximum angle of the servo (180º)
          */
         ServoTempChange(uint8_t servoPin, uint16_t servoMin, uint16_t servoMax);
         void setTempChange(int8_t tempChange);

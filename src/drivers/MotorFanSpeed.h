@@ -10,9 +10,9 @@ class MotorFanSpeed : public FanSpeed {
 
     public:
         /**
-         * @param speedPin Número de pin con el que se controla la velocidad del motor
-         * @param forwardPin Número de pin con el que se indica el sentido de avance al motor
-         * @param backwardPin Número de pin con el que se indica el sentido de retroceso al motor
+         * @param speedPin Pin number used to control the motor speed
+         * @param forwardPin Pin number used to indicate the forward direction to the motor
+         * @param backwardPin Pin number used to indicate the backward direction to the motor
          */
         MotorFanSpeed(uint8_t speedPin, uint8_t forwardPin, uint8_t backwardPin);
         void setFanSpeed(uint8_t fanSpeed);

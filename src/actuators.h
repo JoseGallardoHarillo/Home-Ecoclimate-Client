@@ -1,13 +1,13 @@
 #pragma once
 
 /**
- * @brief Inicializa todo el sistema de actuadores
+ * @brief Initializes the entire actuator system
  * 
- * @param gid ID de grupo de todos los actuadores
+ * @param gid Group ID for all actuators
  */
 void setupActuators(const String gid);
 
 /**
- * @brief Activa un ciclo de gestión de los actuadores
+ * @brief Activates an actuator management cycle
  */
 void handleActuators();

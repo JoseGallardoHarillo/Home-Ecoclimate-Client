@@ -29,3 +29,6 @@ In this configuration, the microcontroller will interface with a combined DHT11 
 ## Architecture
 
 Device management is facilitated through libraries that abstract their use as drivers and through custom interfaces that adapt these components for the specific requirements of this project. For more details, refer to the integrated Doxygen documentation in the source code.
+
+## Contact
+- For any questions or support, feel free to reach out: josegallardoharillo@gmail.com

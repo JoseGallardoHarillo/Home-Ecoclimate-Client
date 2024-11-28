@@ -3,13 +3,13 @@
 #include <stdint.h>
 
 /**
- * @brief Interfaz que indica el nivel de apertura de la persiana (vertical)
+ * @brief Interface that indicates the blind (vertical) opening level
  */
 class WindowBlind {
 
     public:
         /**
-         * @param angle Ajusta el grado de apertura. Valores posibles: 0 a 255.
+         * @param angle Adjusts the opening degree. Possible values: 0 to 255.
          */
         virtual void setAngle(uint8_t angle);
 

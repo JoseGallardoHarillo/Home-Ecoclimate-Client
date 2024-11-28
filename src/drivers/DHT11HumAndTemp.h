@@ -3,9 +3,9 @@
 #include "Temperature.h"
 
 /**
- * @brief Resultado de la medición del sensor DHT11 con código de error
+ * @brief Result of the DHT11 sensor measurement with error code
  * 
- * @tparam T Tipo de valor de la medición
+ * @tparam T Measurement value type
  */
 template <class T>
 struct DHTResult {
@@ -20,7 +20,7 @@ class DHT11HumAndTemp : public Humidity<DHTResult<float>>, public Temperature<DH
 
     public:
         /**
-         * @param signalPin Pin de señal del sensor DHT11
+         * @param signalPin Signal pin of the DHT11 sensor
          */
         DHT11HumAndTemp(uint8_t signalPin);
         DHTResult<float> getHumidity();

@@ -1,13 +1,13 @@
 #pragma once
 
 /**
- * @brief Inicializa todo el sistema de sensores
+ * @brief Initializes the entire sensor system
  * 
- * @param gid ID de grupo de todos los sensores
+ * @param gid Group ID for all sensors
  */
 void setupSensors(String gid);
 
 /**
- * @brief Activa un ciclo de gestión de los sensores
+ * @brief Activates a sensor management cycle
  */
 void handleSensors();

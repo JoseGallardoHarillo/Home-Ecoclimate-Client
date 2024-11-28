@@ -3,13 +3,13 @@
 #include <stdint.h>
 
 /**
- * @brief Interfaz que especifica cómo controlar la velocidad del ventilador
+ * @brief Interface that specifies how to control the fan speed
  */
 class FanSpeed {
 
     public:
         /**
-         * @param fanSpeed Ajusta la velocidad de giro. Valores posibles: 0 a 255.
+         * @param fanSpeed Adjusts the rotation speed. Possible values: 0 to 255.
          */
         virtual void setFanSpeed(uint8_t fanSpeed);
 

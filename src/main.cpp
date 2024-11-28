@@ -1,6 +1,6 @@
-// Nota: el sistema de actuadores y sensores son mutuamente excluyentes. Para
-//       habilitar uno u otro, descomentar las líneas comentadas y comentar
-//       la inmediatamente inferior.
+// Note: the actuator and sensor systems are mutually exclusive. To
+//       enable one or the other, uncomment the commented lines and comment
+//       the line immediately below.
 
 #include <ESP8266WiFi.h>
 // #include "actuators.h"
